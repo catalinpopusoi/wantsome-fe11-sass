@@ -1,0 +1,52 @@
+@import 'variables';
+@import 'typography';
+@import 'spacings';
+@import 'mixins';
+@import 'grid-classes';
+@import 'loader';
+
+* {
+    box-sizing: border-box;
+}
+
+section {
+    border: 0.5rem solid $black;
+    padding: $spacing-base;
+
+    & > article {
+        background-color: lightcoral;
+        margin-bottom: $spacing-xl;
+
+        &:hover {
+            background-color: lightgreen;
+        }
+    }
+}
+
+.box {
+    &:first-of-type {
+        @include box(100px, green, yellow);
+    }
+
+    &:nth-of-type(2) {
+        @include box(200px, black, blue, 1s);
+    }
+
+    &:nth-of-type(3) {
+        @include box(300px, red, lightseagreen, 2s);
+    }
+}
+
+.loader {
+    &:first-of-type {
+        @include loading(50px, lightseagreen, 3s);
+    }
+
+    &:nth-of-type(2) {
+        @include loading(25px, red, 2s);
+    }
+
+    &:last-of-type {
+        @include loading(100px, blue, 6s);
+    }
+}

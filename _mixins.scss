@@ -1,0 +1,10 @@
+@mixin box($size, $primary-color, $hover-color, $transition-speed: 500ms) {
+    width: $size;
+    height: $size;
+    background-color: $primary-color;
+    transition: background-color $transition-speed linear;
+
+    &:hover {
+        background-color: $hover-color;
+    }
+}
